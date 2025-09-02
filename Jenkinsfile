@@ -33,7 +33,7 @@ pipeline {
                     test -f build/index.html
                     npm test -- --ci --runInBand
                 '''
-                junit 'reports/junits/js-test-results.xml'
+                junit 'reports/junit/js-test-results.xml'
             }
         }
     }
