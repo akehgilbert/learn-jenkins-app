@@ -14,7 +14,7 @@ pipeline {
                     ls -la
                     node --version
                     npm --version
-                    npm ci
+                    npm ci 
                     npm run build
                     ls -la
                 '''
@@ -28,10 +28,9 @@ pipeline {
                     reuseNode true
                 }
             }
-
             steps {
-                sh ''''
-                    test -f build/index.html'
+                sh '''
+                    test -f build/index.html
                     npm test
                 '''
             }
