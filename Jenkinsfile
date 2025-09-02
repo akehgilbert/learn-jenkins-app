@@ -28,13 +28,19 @@ pipeline {
                     reuseNode true
                 }
             }
+
             steps {
                 sh '''
                     test -f build/index.html
-                    npm test -- --ci --runInBand
+                    npm test
                 '''
-                junit 'reports/junit/js-test-results.xml'
             }
+        }
+    }
+
+    post {
+        always {
+            junit 'test-results/junit.xml'
         }
     }
 }
