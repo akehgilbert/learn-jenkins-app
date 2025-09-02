@@ -33,6 +33,7 @@ pipeline {
                     test -f build/index.html
                     npm test
                 '''
+                junit 'reports/junits/js-test-results.xml'
             }
         }
     }
